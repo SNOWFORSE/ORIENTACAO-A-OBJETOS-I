@@ -23,7 +23,7 @@ public class SistemaEscolar {
     
     private void menu()throws Exception{
         String opcao = "";
-        while (opcao.equals("4")) {
+        while (!opcao.equals("4")) {
             System.out.println("-----------------------------");
             System.out.println("[1] Cadastrar nova Turma");
             System.out.println("[2] Listar Turmas Existentes");
@@ -34,13 +34,13 @@ public class SistemaEscolar {
 
             switch (opcao) {
                 case "1":
-                    //this.cadastrarTurma();
+                    cadastrarTurma();
                     break;
                 case "2":
-                    //this.listarTurmas();
+                    listarTurmas();
                     break;
                 case "3":
-                    //this.consultarTurma();
+                    consultarTurma();
                     break;
                 default:
                     System.out.println("Opção inválida!");
@@ -90,5 +90,51 @@ public class SistemaEscolar {
             t.setAlunos(aluno);
         }
         e1.setTurma(t);
+    }
+
+    public static void listarTurmas() {
+        System.out.println("--------------------");
+        System.out.println("Listagem de Turmas");
+        for (int i = 0; i < el.getQtdeTurmas(); i++) {
+          /*System.out.println("- Número: " + el.getTurma(i).getNroTurma() 
+                            +  "- Curso: " + el.getTurma(i).getNomeCurso() 
+                            +  "- Ano: " + el.getTurma(i).getAnoIngresso()
+                            +  "- Qtde alunos: " + el.getTurma(i).getQtdeAlunos() );*/
+
+            //ou
+            Turma t = el.getTurma(i);
+            System.out.println("- Número: " + t.getNroTurma()
+                             + "- Curso: " + t.getNomeCurso()
+                             + "- Ano: " + t.getAnoIngresso()
+                             + "- Qtde Alunos: " + t.getQtdeAlunos());
+        }
+    }
+
+    private void consultarTurma() throws Exception{
+        System.out.println("--------------------");
+        System.out.println("Consulta de Turmas");
+        System.out.println("Número de Turma");
+        int numTurma = Integer.parseInt(reader.readLine());
+        Boolean achou = false;
+        for (int i = 0; i < el.getQtdeTurmas(); i++) {
+            Turma t = el.getTurma(i);
+            if(t.getNroTurma() == numTurma){
+                System.out.println("[ALUNOS DA TURMA]");
+                int posAluno = 0;
+                while (t.getAluno(posAluno) != null) {
+                    String linha = "- Nome: " + t.getAluno(posAluno).getNomeCurso()
+                                 + "- Matricula: " + t.getAluno(posAluno).getMatricula()
+                                 + "- Média: " + t.getAluno(posAluno).calcularMedia();
+                    System.out.println(linha);
+                    posAluno++;
+
+                }
+                achou = false;
+                break;
+            }
+        }
+        if(!achou){
+            System.out.println("Turma não encontrada!");
+        }
     }
 }

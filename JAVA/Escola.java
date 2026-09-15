@@ -1,10 +1,9 @@
 public class Escola {
     private String nome;
     private String fone;
-    private int qtdTurmas;
+    private int qtdeTurmas;
     private Turma[] vetTurmas;
 
-    //construtor 
     public Escola(){
         this.vetTurmas = new Turma[20];
     }
@@ -25,15 +24,19 @@ public class Escola {
         this.fone = fone;
     }
 
-    public int getQtdTurmas() {
-        return qtdTurmas;
+    public int getQtdeTurmas() {
+        return qtdeTurmas;
     }
-    
-    public void setQtdTurmas(int qtdTurmas){
-        if(this.qtdTurmas < 20){
-            this.vetTurmas[qtdTurmas] = new Turma();
-            this.qtdTurmas++;
+
+    public Turma getTurma(int pos){
+        return this.vetTurmas[pos];
+    }
+
+    public void setTurma(Turma t){
+        if(this.qtdeTurmas < 20){
+            this.vetTurmas[qtdeTurmas] = t;
+            qtdeTurmas++;
         }
     }
-    //gets/sets -> gerar
+
 }

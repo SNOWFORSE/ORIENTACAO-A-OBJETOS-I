@@ -1,33 +1,55 @@
 public class Voo {
-    private float QtdPassageiros;
-    private String HoraVoo;
+    private int idVoo;
+    private String Hora;
+    private String Data;
     private String Origem;
     private String Destino;
+    private int QtdPassageiros;
+    private Passageiro[] vetPassageiros;
 
-    public float QtdPassageiros(){
-        return this.QtdPassageiros;
+
+//Método Getter
+    public Voo(){
+        this.vetPassageiros = new Passageiro[50];
+        this.QtdPassageiros = 0;
     }
-    public String HoraVoo(){
-        return this.HoraVoo;
+    public int getIdVoo(){
+        return this.idVoo;
     }
-    public String Origem(){
+    public String getHora(){
+        return this.Hora;
+    }
+    public String getData(){
+        return this.Data;
+    }
+    public String getOrigem(){
         return this.Origem;
     }
-    public String Destino(){
+    public String getDestino(){
         return this.Destino;
     }
+    public float getQtdPassageiros(){
+        return this.QtdPassageiros;
+    }
 
-    public void setQtdPassageiros(float q){
-        this.QtdPassageiros = q;
+//Método Setter
+    public void setidvoo(int i){
+        this.idVoo = i;
     }
-    public void HoraVoo(String h){
-        this.HoraVoo = h;
+    public void setHora(String h){
+        this.Hora = h;
     }
-    public void Origem(String o){
+    public void setData(String dt){
+        this.Data = dt;
+    }
+    public void setOrigem(String o){
         this.Origem = o;
     }
-    public void Destino(String d){
+    public void setDestino(String d){
         this.Destino = d;
+    }
+    public void setQtdPassageiros(int q){
+        this.QtdPassageiros = q;
     }
 }
 

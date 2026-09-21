@@ -1,47 +1,49 @@
 public class Passageiro {
-    private String Nome;
-    private float Idade;
-    private String Sexo;
-    private String Nacionalidade;
-    private String Passaporte;
-    private String IdPassageiros;
+    private String nome;
+    private int idade;
+    private String sexo;
+    private String nacionalidade;
+    private String passaporte;
+    private String cpf;
     
-
+//Método Getters
     public String getNome(){
-        return this.Nome;
+        return this.nome;
     }
     public float getIdade(){
-        return this.Idade;
+        return this.idade;
     }
     public String getSexo(){
-        return this.Sexo;
+        return this.sexo;
     }
     public String getNacionalidade(){
-        return this.Nacionalidade;
+        return this.nacionalidade;
     }
     public String getPassaporte(){
-        return this.Passaporte;
+        return this.passaporte;
     }
-    public String getIdPassageiros(){
-        return this.IdPassageiros;
+    public String getCPF(){
+        return this.cpf;
     }
 
+
+//Método Setters
     public void setNome(String n){
-        this.Nome = n;
+        this.nome = n;
     }
-    public void setIdade(float i){
-        this.Idade = i;
+    public void setIdade(int i){
+        this.idade = i;
     }
     public void setSexo(String s){
-        this.Sexo = s;
+        this.sexo = s;
     }
     public void setNacionalidade(String n){
-        this.Sexo = n;
+        this.nacionalidade = n;
     }
     public void setPassaporte(String p){
-        this.Sexo = p;
+        this.passaporte = p;
     }
-    public void setIdPassageiro(String id){
-        this.Sexo = id;
+    public void setCPF(String c){
+        this.cpf = c;
     }
 }

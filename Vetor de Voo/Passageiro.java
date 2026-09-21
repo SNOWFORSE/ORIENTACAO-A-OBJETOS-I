@@ -10,7 +10,7 @@ public class Passageiro {
     public String getNome(){
         return this.nome;
     }
-    public float getIdade(){
+    public int getIdade(){
         return this.idade;
     }
     public String getSexo(){

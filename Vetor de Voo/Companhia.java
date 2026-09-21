@@ -4,18 +4,19 @@ public class Companhia {
     private int qtdVoo;
     private Voo[] vetVoo;
 
-// Método Get
     public Companhia(){
         this.vetVoo = new Voo[10];
         this.qtdVoo = 0;
     }
+    
+    // Método Get
     public String getNomeCompanhia(){
         return this.nomeCompanhia;
     }
     public String getCNPJ(){
         return this.cnpj;
     }
-    public float getQtdVoo(){
+    public int getQtdVoo(){
         return this.qtdVoo;
     }
     public Voo getVoo(int posicao){
@@ -25,7 +26,7 @@ public class Companhia {
         return null;
     }
 
-// Método Set
+    // Método Set
     public void setNomeCompanhia(String nc){
         this.nomeCompanhia = nc;
     }

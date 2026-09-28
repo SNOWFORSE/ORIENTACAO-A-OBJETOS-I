@@ -86,7 +86,7 @@ public class SistemaCompanhia {
         System.out.print("Digite o ID do Voo desejado: ");
         int idVoo = Integer.parseInt(reader.readLine());
 
-        Voo vAlvo = null;
+        Voo vOo = null;
         for (int i = 0; i < c1.getQtdVoo(); i++) {
             Voo v = c1.getVoo(i);
             if (v.getIdVoo() == idVoo) {
@@ -95,7 +95,7 @@ public class SistemaCompanhia {
             }
         }
 
-        if (vAlvo == null) {
+        if (vOo == null) {
             System.out.println("Voo não encontrado.");
             return;
         }
@@ -113,7 +113,7 @@ public class SistemaCompanhia {
         System.out.print("Digite a nacionalidade do passageiro: ");
         p.setNacionalidade(reader.readLine());
 
-        vAlvo.setPassageiro(p);
+        vOo.setPassageiro(p);
         System.out.println("Passageiro cadastrado com sucesso no voo!");
     }
 
